@@ -57,7 +57,7 @@ static constexpr int kPdgOmegaMinus{3334};
 } // namespace lambda_analysis
 
 // FIX name/struct: use UpperCamelCase for struct names
-struct Lambda1520Analysispo {
+struct lambda1520Analysispo {
 
   SliceCache sliceCache;
 
@@ -805,7 +805,7 @@ struct Lambda1520Analysispo {
     allHistograms.fill(HIST("Event/primaryVertexZ"), collision.posZ());
     fillInvariantMassHistograms<false, false>(tracks, tracks, collision.cent());
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processData,
+  PROCESS_SWITCH(lambda1520Analysispo, processData,
                  "Process real collision data (same-event analysis)", true);
 
   // ============================================================
@@ -900,7 +900,7 @@ struct Lambda1520Analysispo {
                            parentMass, parentParticle.pt(), centralityPercent);
     }
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processMC,
+  PROCESS_SWITCH(lambda1520Analysispo, processMC,
                  "Process Monte Carlo simulated events", false);
 
   // ============================================================
@@ -993,7 +993,7 @@ struct Lambda1520Analysispo {
       }
     }
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processMCGen,
+  PROCESS_SWITCH(lambda1520Analysispo, processMCGen,
                  "Generator-level MC signal loss study (mT scaling)", false);
 
   // ── Event-mixing binning types ───────────────────────────────────────────
@@ -1022,7 +1022,7 @@ struct Lambda1520Analysispo {
       fillInvariantMassHistograms<true, false>(tracks1, tracks2, col1.cent());
     }
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processMix,
+  PROCESS_SWITCH(lambda1520Analysispo, processMix,
                  "Event mixing for background estimation (standard format)", true);
 
   // ── Merged-DF type aliases ───────────────────────────────────────────────
@@ -1046,7 +1046,7 @@ struct Lambda1520Analysispo {
     allHistograms.fill(HIST("Event/centralityVsOccupancy"), collision.cent(), occupancyValue);
     fillInvariantMassHistograms<false, false>(tracks, tracks, collision.cent(), occupancyValue);
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processDatadf,
+  PROCESS_SWITCH(lambda1520Analysispo, processDatadf,
                  "Process real data in merged derived-data (DF) format", false);
 
   // ============================================================
@@ -1078,7 +1078,7 @@ struct Lambda1520Analysispo {
       fillInvariantMassHistograms<true, false>(tracks1, tracks2, col1.cent(), occupancyValue);
     }
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processMixDF,
+  PROCESS_SWITCH(lambda1520Analysispo, processMixDF,
                  "Event mixing for DF-format data", false);
 
   // ============================================================
@@ -1108,11 +1108,11 @@ struct Lambda1520Analysispo {
       fillInvariantMassHistograms<true, false>(tracks1, tracks2, col1.cent());
     }
   }
-  PROCESS_SWITCH(Lambda1520Analysispo, processMixepDF,
+  PROCESS_SWITCH(lambda1520Analysispo, processMixepDF,
                  "Event-plane dependent event mixing for DF-format data", false);
 };
 
 WorkflowSpec defineDataProcessing(ConfigContext const& cfgc)
 {
-  return WorkflowSpec{adaptAnalysisTask<Lambda1520Analysispo>(cfgc)};
+  return WorkflowSpec{adaptAnalysisTask<lambda1520Analysispo>(cfgc)};
 }
